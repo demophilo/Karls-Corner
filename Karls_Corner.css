@@ -1,0 +1,338 @@
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: #ddd;
+  padding: 10px;  
+}
+
+.section-content {
+  min-height: 200px;
+}
+
+/*   ( ORIENTATION )  -------------------------------------------------
+    Summary:    specifies how flex items are placed in the flex container defining
+                the main axis and the direction (normal or reversed).
+    Options:
+        Column: set main axis to vertical
+        Row :   set main axis to horizontal
+    Reference:  https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+    Default:    flex-direction: row;
+*/
+.flex-row {
+    display: flex !important;
+    flex-direction: row;
+  
+}
+
+
+.flex-row-reverse {
+    display: flex !important;
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    display: flex !important;
+    flex-direction: column-reverse;
+}
+
+/*
+    WRAPPING -------------------------------------------------------------------
+    Summary:   specifies whether flex items are forced into a single line or can
+               be wrapped onto multiple lines. If wrapping is allowed, this property
+               also enables you to control the direction in which lines are stacked.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+    Default:   flex-wrap: nowrap;
+*/
+.flex-no-wrap {
+    flex-wrap: nowrap;
+}
+
+.flex-reverse-wrap {
+    flex-wrap: wrap-reverse;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/*  JUSTIFICATION (Main axis)   ------------------------------------------------
+    Summary:    defines how the browser distributes space between and around flex
+    items along the main-axis of their container.
+    Reference:  https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+    Default:    justify-content: flex-start;
+*/
+/* Pack items around the center */
+.flex-content-center {
+    justify-content: center;
+}
+
+/* Pack flex items from the start  */
+.flex-content-start {
+    justify-content: flex-start;
+}
+
+/* Pack items from the end */
+.flex-content-end {
+    justify-content: flex-end;
+}
+
+/* Distribute items evenly,
+    The first item at the start, the last at the end */
+.flex-content-between {
+    justify-content: space-between;
+}
+
+/* Distribute items evenly
+    Items have equal space around them */
+.flex-content-around {
+    justify-content: space-around;
+}
+
+/*
+    ALIGN ITEMS ( Cross axis )  ------------------------------------------------
+    Summary:   aligns flex items of the current flex line the same way as
+               justify-content but in the perpendicular direction.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+    Default:   align-items: stretch;
+*/
+/* Center items in the cross-axis */
+.flex-align-items-center {
+    align-items: center;
+}
+
+/* Align to cross-start */
+.flex-align-items-start {
+    align-items: flex-start;
+}
+
+/* Align to cross-end */
+.flex-align-items-end {
+    align-items: flex-end;
+}
+
+/* Align the items' baselines */
+.flex-align-items-baseline {
+    align-items: baseline;
+}
+
+/* Stretch the items to fit
+    DEFAULT VALUE  */
+.flex-align-items-stretch {
+    align-items: stretch;
+}
+
+/*
+    ALIGN CONTENT ( Cross axis )  ----------------------------------------------
+    Summary:   aligns a flex container's lines within the flex container when
+               there is extra space on the cross-axis.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
+    Default:   align-content: flex-start;
+*/
+/* Pack lines from the cross-axis start */
+.flex-align-content-start {
+    align-content: flex-start;
+}
+
+/* Pack lines to the cross-axis end */
+.flex-align-content-end {
+    align-content: flex-end;
+}
+
+/* Pack lines around the cross-axis center */
+.flex-align-content-center {
+    align-content: center;
+}
+
+/* Distribute lines along the cross-axis, start to end */
+.flex-align-content-between {
+    align-content: space-between;
+}
+
+/* Distribute lines along the cross-axis, equally spaced */
+.flex-align-content-around {
+    align-content: space-around;
+}
+
+/* Stretch lines to occupy the whole cross-axis */
+.flex-align-content-stretch {
+    align-content: stretch;
+}
+
+/*
+    FLEX GROW  ----------------------------------------------------------------
+    Summary:   Expands an item to fill available space
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
+    Default:   flex-grow: 0;
+*/
+.flex-grow {
+    flex-grow: 1;
+}
+
+/*
+    ALIGN SELF ( Cross axis )  ------------------------------------------------
+    Summary:   aligns flex items of the current flex line overriding the align-items value.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-self
+    Default:   align-self: auto;
+*/
+/*  Computes to parent's align-items value or stretch if the element has no parent.  */
+.flex-align-self-auto {
+    align-self: auto;
+}
+
+/*  Cross-start margin edge of the flex item is flushed with the cross-start edge of the line.  */
+.flex-align-self-start {
+    align-self: flex-start;
+}
+
+/*  Cross-end margin edge of the flex item is flushed with the cross-end edge of the line.  */
+.flex-align-self-end {
+    align-self: flex-end;
+}
+
+/* Flex item's margin box is centered within the line on the cross-axis.
+    If the cross-size of the item is larger than the flex container, it will
+    overflow equally in both directions.  */
+.flex-align-self-center {
+    align-self: center;
+}
+
+/*  All flex items are aligned such that their baselines align. The item with
+    the largest distance between its cross-start margin edge and its baseline is
+    flushed with the cross-start edge of the line.  */
+.flex-align-self-baseline {
+    align-self: baseline;
+}
+
+/*  Flex items are stretched such as the cross-size of the item's margin box is
+    the same as the line while respecting width and height constraints.  */
+.flex-align-self-stretch {
+    align-self: stretch;
+}
+
+/*
+    VISUAL ORDER ---------------------------------------------------------------
+    Summary:   specifies the order used to lay out flex items in their flex container.
+               Elements are laid out in the ascending order of the order value.
+               Elements with the same order value are laid out in the order in
+               which they appear in the source code.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/order
+    Default:   order: 0; { no order }
+*/
+.flex-order-one {
+    order: 1;
+}
+
+.flex-order-two {
+    order: 2;
+}
+
+.flex-order-three {
+    order: 3;
+}
+
+.flex-row.flex-spacing-8 > :not(:last-child) {
+  margin-right: 8px;
+}
+
+.flex-column.flex-spacing-8 > :not(:last-child) {
+  margin-bottom: 8px;
+}
+.nebensache{
+    flex-grow: 1;
+    flex-basis: 10em;
+    border:1px solid black;
+    padding: 20px;
+}
+
+.hauptsache{
+    flex-grow: 3;
+    flex-basis: 30em;
+    margin-right: 8px;
+    border:1px solid black;
+}
+
+
+/*macht als Hovereffekt eine linkes oberes Eselsohr in der navigationsleiste */
+
+.sprung_nav {font-family: "Fira Sans", sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+}
+.sprung_nav:before {
+  pointer-events: none;
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: black;
+  background: linear-gradient(135deg, black 45%, rgb(41, 3, 3) 50%, rgb(65, 36, 36) 56%, red 80%);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.3s;
+  transition-property: width, height;
+}
+.sprung_nav:hover:before, .sprung_nav:focus:before, .sprung_nav:active:before {
+  width: 10px;
+  height: 10px;
+}
+
+/*macht als Hovereffekt eine linkes oberes Eselsohr */
+
+.eselsohr {font-family: "Fira Sans", sans-serif;
+    display: inline-block;
+    vertical-align: middle;    
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+}
+.eselsohr:before {
+    pointer-events: none;
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: black;
+    background: linear-gradient(135deg, black 45%, rgb(56, 2, 2) 50%, rgb(148, 17, 17) 56%, red 80%);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    transition-duration: 3s;
+    transition-property: width, height;
+}
+.eselsohr:hover:before, .eselsohr:focus:before, .eselsohr:active:before {
+    width: 140px;
+    height: 140px;
+}
+p{font-family: 'Cormorant Garamond', serif;}
+
+
+.chem{font-family: 'Fira Sans', sans-serif;}
+
+
+/*Fontspeicher
+font-family: 'Fira Sans', sans-serif; für chemische Formeln geeignet
+font-family: 'Cormorant Garamond', serif; für Massentext
+
+
+;
+
+*/
+
